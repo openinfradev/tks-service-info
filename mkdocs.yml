@@ -1,6 +1,6 @@
-site_name: SKT Container Platform  
-repo_name: openinfradev/releases
-repo_url: https://github.com/openinfradev/releases
+site_name: SKT TKS
+repo_name: openinfradev/tks-service-info
+repo_url: https://github.com/openinfradev/tks-service-info
 theme:
   language: kr
   name: material
@@ -64,18 +64,8 @@ markdown_extensions:
   - toc:
       permalink: true
 nav:
-  - Welcome: index.md
-  - Quick Start: quickstart/1-0-0.md
-  - Release Note: releasenotes/1-0-0.md
+  - 소개: index.md
+  - 자습서: selfstudy/tks-selfstudy.md
   - Architecture: 
       - 'Overview': architecture/overviewarch.md
-      - 'GitOps Architecture': architecture/tksgitops.md
       - 'AWS Ref. Architecture': architecture/awsarch.md
-  - CLI Manual: 
-      - 'Overview': cli/overview.md
-      - 'Installation': cli/install.md
-      - 'Configuration': cli/configuration.md
-      - Command:
-        - 'tks cluster': cli/tks_cluster.md
-        - 'tks service': cli/tks_service.md
-  - API Reference: api/1-0-0.md 
