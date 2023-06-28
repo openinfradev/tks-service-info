@@ -16,5 +16,5 @@ SKT Container Platform의 주요 특징은 다음과 같다.
 
 ![TKS](./assets/images/tksre21arch.png)
 
-[GitHub Page https://github.com/openinfradev/releases](https://github.com/openinfradev/releases)
+
 
