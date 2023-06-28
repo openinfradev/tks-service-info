@@ -1,0 +1,81 @@
+site_name: SKT Container Platform  
+repo_name: openinfradev/releases
+repo_url: https://github.com/openinfradev/releases
+theme:
+  language: kr
+  name: material
+  logo: assets/taco_icon.png
+  font:
+    text: Noto Sans Korean  
+  palette: 
+   - scheme: default
+     toggle:
+       icon: material/toggle-switch-off-outline
+       name: Switch to dark mode
+   - scheme: slate 
+     toggle:
+       icon: material/toggle-switch
+       name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.instant
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - toc.integrate       
+    - content.code.annotate
+    - content.tabs.link
+    - search.highlight
+    - search.share
+    - search.suggest
+  highlightjs: true
+
+plugins:
+  - search
+#  - awesome-pages
+#  - section-index
+#  - mike:
+#      # these fields are all optional; the defaults are as below...
+#      version_selector: true   # set to false to leave out the version selector
+#      css_dir: css             # the directory to put the version selector's CSS
+#      javascript_dir: js       # the directory to put the version selector's JS
+
+extra_css:
+    - assets/css/extra.css
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - attr_list
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+#    - emoji_index: !!python/name:materialx.emoji.twemoji
+#    - emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      permalink: true
+nav:
+  - Welcome: index.md
+  - Quick Start: quickstart/1-0-0.md
+  - Release Note: releasenotes/1-0-0.md
+  - Architecture: 
+      - 'Overview': architecture/overviewarch.md
+      - 'GitOps Architecture': architecture/tksgitops.md
+      - 'AWS Ref. Architecture': architecture/awsarch.md
+  - CLI Manual: 
+      - 'Overview': cli/overview.md
+      - 'Installation': cli/install.md
+      - 'Configuration': cli/configuration.md
+      - Command:
+        - 'tks cluster': cli/tks_cluster.md
+        - 'tks service': cli/tks_service.md
+  - API Reference: api/1-0-0.md 
