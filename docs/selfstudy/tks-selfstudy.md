@@ -19,8 +19,8 @@ TKS를 사용하기 위해서는 아래와 같은 사전 준비가 필요합니�
   > AWS Acccount 신청은 www.aws.com 에 접속하여 신청 하시거나, SKT Enterprise 영업에 문의 부탁드립니다.
 
     TKS는 AWS의 자원을 관리하기 위해 AWS Access Key를 사용하여 AWS Assume role 생성 후 사용합니다.
-    Secret Access Key는 생성 후, 한번만 노출됨으로 잘 저장하여 관리 해 주십시요.
-    자습서는 손쉬은 시작을 위해, 아래와 같이 admin access 권한을 같는 Access Key 를 사용하는 것을 가정 합니다. 
+    Secret Access Key는 생성 후, 한번만 노출됨으로 잘 저장하여 관리 해 주세요.
+    자습서는 손쉬운 시작을 위해, 아래와 같이 admin access 권한을 갖는 Access Key를 사용하는 것을 가정 합니다. 
        
     1. **AWS console로 접근 후, IAM User를 생성합니다.**
 
@@ -29,10 +29,10 @@ TKS를 사용하기 위해서는 아래와 같은 사전 준비가 필요합니�
         ![bootstrap](../assets/images/aws-policy-admin.png)
         > 사내 보안 정책에 따라 보다 제한된 정책만 적용 하여 설치 가능합니다. 자세한 가이드는 ==tks-service@sk.com==으로 문의 부탁드립니다.
     
-    3. **IAM User의 Access key 를 생성합니다.**
+       3. **IAM User의 Access key 를 생성합니다.**
 
-        AWS access key ID / secret access key에 대한 자셍한 정보 및 생성 방법은 아래 AWS 문서를 참고해 주세요.
-        https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html
+           AWS access key ID / secret access key에 대한 자세한 정보 및 생성 방법은 아래 AWS 문서를 참고해 주세요. ([AWS Account and Access Keys Guide](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html))
+       
      
 
 
