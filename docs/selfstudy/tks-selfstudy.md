@@ -110,88 +110,85 @@ Session Token의 경우 MFA가 적용된 경우 추가로 입력해 하는 값 �
         스택 상세 화면에서 운영대시보드 항목의 바로가기 버튼을 클릭하여 Grafana에 접근할 수 있습니다. 미리 구성된 다양한 Built-in Dashboard를 통해 조직 내 모든 스택에 대한 모니터링을 할 수 있습니다. Grafana는 TKS Console과 SSO를 지원하기 때문에, TKS Console에 로그인 후 자동 로그인 됩니다. 
         ![bootstrap](../assets/images/tks-grafana.png)
 
-     - **kubeconfig로 접근**
+      - **kubeconfig로 접근**
 
-         가장 전통적인 방법으로 CLI를 통해 접근하는 방법입니다. (e.g. kubectl get ns)
-         스택 상세 화면의 관리도구 영역의 kubeconfig 다운로드 버튼을 통해 kubeconfig 파일을 다운로드 받아 kubectl tool을 이용해 접근할 수 있습니다.
-         단, 다음과 같은 이유로 다운로드 한 kubeconfig 파일을 활용하기 위해서는 몇 가지 추가 작업이 필요할 수 있습니다.
-         > TKS는 AWS를 사용시 AWS STS(Security Token Service)를 활용해 Kubernetes API에 대한 보다 안전한 접근을 제안합니다. <br>Kubernetes는 자체적으로 사용자 관리 기능을 제공하지 않고, 외부 서비스와 연동하게 설계되어 있습니다. 이는 핵심에 집중하여 본질에 충실하기 위한 Open Source의 정신에 입각한 진화 방향입니다. <br> 따라서, 안전한 접근을 위해 AWS IAM Authenticator를 사용합니다. AWS IAM Authenticator는 AWS STS를 통해 발급받은 임시 보안 자격 증명을 사용하여 Kubernetes API에 대한 인증을 수행합니다.
-       
-         따라서, TKS가 제공하는 Kubeconfig을 사용하기 위해서는 **kubectl** tool 설정된 Host PC에 AWS IAM Authenticator를 설치해야 합니다.   
-         CLI 접근을 Host PC에 필요한 Tool은 아래와 같습니다.
-
-          - AWS IAM Authenticator (**0.5.9 version 이상**) 
-
-             https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/install-aws-iam-authenticator.html
-      
-          - kubectl
-
-             https://kubernetes.io/docs/tasks/tools/
-     
-          - (option) AWS CLI : 설정이 잘 되었는지 확인 시 필요합니다.
-
-             https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html 
-  
+          가장 전통적인 방법으로 CLI를 통해 접근하는 방법입니다. (e.g. kubectl get ns)
+          스택 상세 화면의 관리도구 영역의 kubeconfig 다운로드 버튼을 통해 kubeconfig 파일을 다운로드 받아 kubectl tool을 이용해 접근할 수 있습니다.
+          단, 다음과 같은 이유로 다운로드 한 kubeconfig 파일을 활용하기 위해서는 몇 가지 추가 작업이 필요할 수 있습니다.
+          > TKS는 AWS를 사용시 AWS STS(Security Token Service)를 활용해 Kubernetes API에 대한 보다 안전한 접근을 제안합니다. <br>Kubernetes는 자체적으로 사용자 관리 기능을 제공하지 않고, 외부 서비스와 연동하게 설계되어 있습니다. 이는 핵심에 집중하여 본질에 충실하기 위한 Open Source의 정신에 입각한 진화 방향입니다. <br> 따라서, 안전한 접근을 위해 AWS IAM Authenticator를 사용합니다. AWS IAM Authenticator는 AWS STS를 통해 발급받은 임시 보안 자격 증명을 사용하여 Kubernetes API에 대한 인증을 수행합니다.
         
-        아래는 IAM User 권한은 AWS STS를 사용하여 K8S API를 사용하기 위한 절차다. 
+          - **AWS IAM Authenticator 설치 및 사용법**
+        
+            TKS가 제공하는 Kubeconfig을 사용하기 위해서는 **kubectl** tool 설정된 Host PC에 AWS IAM Authenticator를 설치해야 합니다.   
+            CLI 접근을 Host PC에 필요한 Tool은 아래와 같습니다.
 
-           1. 사용할 IAM User에 아래와 같은 정책을 추가 한다.
+            - AWS IAM Authenticator (**0.5.9 version 이상**)
+            
+               https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/install-aws-iam-authenticator.html
+      
+            - kubectl
+    
+               https://kubernetes.io/docs/tasks/tools/
+     
+            - (option) AWS CLI : 설정이 잘 되었는지 확인 시 필요합니다.
+    
+               https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html 
 
-            ```
-            {
-              "Version": "2012-10-17",
-              "Statement": [     
-                   {
-                       "Effect": "Allow",
-                       "Action": "sts:AssumeRole",
-                       "Resource": "*"
-                   }
-              ]      
-            } 
-            ```
+            아래는 AWS IAM User 권한으로 AWS STS를 사용하여 K8S API를 사용하기 위한 절차입니다.
+      
+            1. 사용할 IAM User에 아래와 같은 정책을 추가 합니다.
+                 ```
+                 {
+                   "Version": "2012-10-17",
+                   "Statement": [     
+                        {
+                            "Effect": "Allow",
+                            "Action": "sts:AssumeRole",
+                            "Resource": "*"
+                        }
+                   ]      
+                 } 
+                 ```
 
-           2. TKS를 관리하는 Role에 사용할 IAM User를 신뢰할 수 있있는 Entity로 추가 한다.
+            2. TKS를 관리하는 Role에 사용할 IAM User를 신뢰할 수 있있는 Entity로 추가합니다.
 
-             TKS로 스택을 최초 생성 시, ==controllers.cluster-api-provider-aws.sigs.k8s.io== 을 생성 합니다.
-             위 Role에 IAM User의 ARN을 신뢰 할 수 있는 개체로 등록합니다.
-             IAM > 역활 > 신뢰관계 에서 아래와 같은 내용을 추가 한다.
+               TKS로 스택을 최초 생성 시, ==controllers.cluster-api-provider-aws.sigs.k8s.io== 을 생성 합니다.
+               위 Role에 IAM User의 ARN을 신뢰 할 수 있는 개체로 등록합니다.
+               IAM > 역활 > 신뢰관계 에서 아래와 같은 내용을 추가 합니다.
+               ![bootstrap](../assets/images/aws-assumerole-trust.png)
+            3. IAM User의 AWS access Key를 생성합니다.
+            4. Host PC에 AWS 환결 설정
+               사용자 루트 Directory 하위 " .aws"에 설정 파일을 생성합니다.
 
-             ![bootstrap](../assets/images/aws-assumerole-trust.png)
+               config 파일 예
 
-          3. IAM User의 AWS access Key를 생성한다.
-          4. Host PC에 AWS 환결 설정
-             사용자 루트 Directory 하위 " .aws"에 설정화일을 생성한다.
+               ```
+               [default]
+               region = ap-northeast-2
+               output = json
+               ```
 
-             config 파일 예
+               credential 파일 예
 
-             ```
-             [default]
-             region = ap-northeast-2
-             output = json
-             ```
+               ```
+               [default]
+               aws_access_key_id = IAM User에서 생성한 Key ID
+               aws_secret_access_key = IAM User에서 생성한 Key 값
+               ```
 
-             credential 파일 예
+               아래 명령어를 통해, 현재 kubeconfig에서 사용할 IAM User를 확인 할 수 있습니다.
 
-             ```
-             [default]
-             aws_access_key_id = IAM User에서 생성한 Key ID
-             aws_secret_access_key = IAM User에서 생성한 Key 값
-             ```
+               ```
+               $ aws sts get-caller-identity
 
-             아래 명령어를 통해, 현재 kubeconfig에서 사용할 IAM User를 확인 할 수 있다.
-
-             ```
-             $ aws sts get-caller-identity
-
-             {
-                 "UserId": "xxxxxxxxxxxxxxxxxx"
-                 "Account": "123412341234",
-                 "Arn": "arn:aws:iam::123412341234:user/gildonghong"
-             }
-             ```
-
-
-          이제 kubectl를 이용하여 스택을 사용 할 수 있다.
+               {
+                   "UserId": "xxxxxxxxxxxxxxxxxx"
+                   "Account": "123412341234",
+                   "Arn": "arn:aws:iam::123412341234:user/gildonghong"
+               }
+               ```
+          위와 같은 AWS IAM Authenticator를 설치 및 설정을 마치면 kubeconfig 파일을 활용하여 스택에 접근할 수 있습니다.
+          
       
 ---
 ## **앱서빙생성 및 변경**
