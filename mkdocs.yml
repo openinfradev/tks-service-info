@@ -2,7 +2,7 @@ site_name: SK Telecom - TKS Cloud Service
 repo_name: openinfradev/tks-service-info
 repo_url: https://github.com/openinfradev/tks-service-info
 theme:
-  language: ko
+  language: kr
   name: material
   logo: assets/taco_icon.png
   font:
