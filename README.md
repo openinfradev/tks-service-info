@@ -27,8 +27,6 @@ Material for MkDocs is packed with many additional editing features. Please see 
 
 - [mkdocs material format reference](https://squidfunk.github.io/mkdocs-material/reference/)
 
-
-
 [mkdocs]: https://github.com/mkdocs/mkdocs
 [material-theme]: https://squidfunk.github.io/mkdocs-material/
 [mike]: https://github.com/jimporter/mike

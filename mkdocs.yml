@@ -1,8 +1,8 @@
-site_name: SKT TKS
+site_name: SK Telecom - TKS Cloud Service
 repo_name: openinfradev/tks-service-info
 repo_url: https://github.com/openinfradev/tks-service-info
 theme:
-  language: kr
+  language: ko
   name: material
   logo: assets/taco_icon.png
   font:
@@ -65,7 +65,12 @@ markdown_extensions:
       permalink: true
 nav:
   - 소개: index.md
-  - 자습서: selfstudy/tks-selfstudy.md
-  - Architecture: 
+  - 퀵스타트 자습서: 
+      - '사전 준비사항': selfstudy/tks-quickstart-prerequisite.md
+      - '로그인 및 클라우드 연동' :  selfstudy/tks-quickstart-firststep.md
+      - '스택 생성 및 사용' :  selfstudy/tks-quickstart-stack.md
+      - '앱 서빙' :  selfstudy/tks-quickstart-appserve.md
+      - '운영' :  selfstudy/tks-quickstart-ops.md
+  - 아키텍처: 
       - 'Overview': architecture/overviewarch.md
       - 'AWS Ref. Architecture': architecture/awsarch.md
