@@ -34,7 +34,7 @@ TKS를 사용하기 위해서는 아래와 같은 사전 준비가 필요합니�
        AWS access key ID / secret access key에 대한 자세한 정보 및 생성 방법은 아래 AWS 문서를 참고해 주세요. ([AWS Account and Access Keys Guide](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html))
 
 
-- **EC2 SSH연결에 사용한 인증서를 설정합니다.**
+- **EC2 SSH연결에 사용할 인증서를 설정합니다.**
 
     > AWS EC2 생성 시, SSH연결을 위한 인증서가 필요합니다. Host 접근이 필요한 경우를 대비, 미리 SSH 인증서를 등록합니다.   
 
