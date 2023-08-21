@@ -20,10 +20,10 @@
    - 앱 서빙 유형은 앱서빙이 자동화하는 수준이다. 어떤 Project의 경우 보안툴 설치등의 이유로 빌드 파이프라인을 자체적으로 별도로 유지하는 경우가 있다. 따라서 빌드 없이 배포만 하는 옵션을 제공한다.
    - 포트와 프로파일은 container 에 대한 설정으로, 포트는 개발된 앱이 실제로 listen하는 포트이며, 프로파일은 Spring/Spring Boot에서 사용되는 프로파일을 말한다.
    - 리소스 스펙은 Kubernetes의 pod 가 사용할 CPU/메모리 등의 spec 이다.
-   - Spring이나 Spring Boot는 결국 Jar나 War file로 묶여서 최종적으로 배포되므로 인자로 Jar/War file이 위차한 URL를 받는다.  
+   - Spring이나 Spring Boot는 결국 Jar나 War file로 묶여서 최종적으로 배포되므로 인자로 Jar/War file이 위차한 URL를 받는다.<br><br>
   
    아래 그림은 Spring Boot SW를 최초로 빌드&배포를 수행하는 예제이다. 현재상태 영역에서 진행 상태를 확인할 수 있다.
-   ![bootstrap](../assets/images/tks-app-deploy-status.png)
+   ![bootstrap](../assets/images/tks-app-deploy-status.png)<br><br>
 
    배포가 완료되면 v1 으로 배포 이력이 관리되며, 배포된 앱으로 바로 접속할 수 있는 endpoint가 제공된다. 아래는 배포 완료된 화면이다. (react를 사용하여 개발되었다)
 
@@ -33,11 +33,11 @@
 
    원하는 앱서빙 상세 화면에 들어가서 업그레이드 버튼을 누른다. 업그레이드부터는 배포전략을 선택할 수 있다. Artificat URL를 포함하여 변경할 항목을 입력하고 배포전략을 선택하여 업그레이드 절차를 수행한다. 자습서에서는 Blue/Grean 정책을 적용했다.
 
-   ![bootstrap](../assets/images/tks-app-upgrade-modal.png)  
+   ![bootstrap](../assets/images/tks-app-upgrade-modal.png)<br><br>
   
    업그레이드가 완료되면 아래 화면과 같이 이전버전과 신규버전을 서로 비교할 수 있는 서비스 URL이 제공된다. 따라서 결과물을 보고 판단 후 프로모션(신규 버전 사용) 또는 abort(이전 버전 사용)를 실시 할 수 있다.
 
-   ![bootstrap](../assets/images/tks-app-bg-wait.png)  
+   ![bootstrap](../assets/images/tks-app-bg-wait.png)<br><br>
   
    신버전 선택 후, 연결된 앱 URL에 접속하니 Vue를 사용한 신규 서비스가 업데이트 되었다.
 
