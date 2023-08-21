@@ -33,7 +33,17 @@ TKS를 사용하기 위해서는 아래와 같은 사전 준비가 필요합니�
 
            AWS access key ID / secret access key에 대한 자세한 정보 및 생성 방법은 아래 AWS 문서를 참고해 주세요. ([AWS Account and Access Keys Guide](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html))
        
-     
+- **EC2 SSH연결에 사용할 인증서를 설정합니다.**
+
+    > AWS EC2 생성 시, SSH연결을 위한 인증서가 필요합니다. Host 접근이 필요한 경우를 대비, 미리 SSH 인증서를 등록합니다.
+
+
+    EC2 Memual의 키페어 매뉴에 들어가 **작업 --> 키 페어 가저오기** 를 선택합니다.
+    ![bootstrap](../assets/images/aws-keypair-menu.png)
+    아래와 같이 사용할 public key를 등록하여 AWS가 안전하게 pem key를 생성하여 관리하게 합니다.
+
+    **[주의] 인증서 이름은 ==tks-seoul== 로 설정해야만 합니다.**
+    ![bootstrap](../assets/images/aws-keypair-import.png)     
 
 
 ---
@@ -68,6 +78,7 @@ Session Token의 경우 MFA가 적용된 경우 추가로 입력해 하는 값 �
 
 
 ![bootstrap](../assets/images/tks-cloudaccount-c.png)
+
 
 ---
 ## **스택생성 및 접근**
