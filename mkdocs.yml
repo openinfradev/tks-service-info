@@ -67,6 +67,7 @@ markdown_extensions:
 nav:
   - 소개: index.md
   - 퀵스타트 자습서: 
+      - '소개': selfstudy/tks-selfstudy.md
       - '사전 준비사항': selfstudy/tks-quickstart-prerequisite.md
       - '로그인 및 클라우드 연동' :  selfstudy/tks-quickstart-firststep.md
       - '스택 생성 및 사용' :  selfstudy/tks-quickstart-stack.md
