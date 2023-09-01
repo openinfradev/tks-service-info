@@ -3,7 +3,7 @@ repo_name: openinfradev/tks-service-info
 repo_url: https://github.com/openinfradev/tks-service-info
 theme:
   language: kr
-  name: material
+  name: material  
   logo: assets/taco_icon.png
   font:
     text: Noto Sans Korean  
@@ -39,7 +39,7 @@ plugins:
   - tags
 #  - awesome-pages
 #  - section-index
-#  - mike:
+  - mike:
       # these fields are all optional; the defaults are as below...
 #      version_selector: true   # set to false to leave out the version selector
 #      css_dir: css             # the directory to put the version selector's CSS
