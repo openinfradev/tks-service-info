@@ -36,10 +36,10 @@ theme:
 
 plugins:
   - search
-  - tags
+#  - tags
 #  - awesome-pages
 #  - section-index
-  - mike:
+#  - mike:
       # these fields are all optional; the defaults are as below...
 #      version_selector: true   # set to false to leave out the version selector
 #      css_dir: css             # the directory to put the version selector's CSS
