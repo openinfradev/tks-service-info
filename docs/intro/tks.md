@@ -1,6 +1,9 @@
 
 # SK Telecom TKS (Kubernetes & App Modernization)
 
+> [!IMPORTANT]
+> Empower your team <br> with a **Production-grade Kubernetes** and **App Modernization capability** on **any infrastructure** <br> with just **One Click**
+
 ## TKS 기술소개
 
 SK텔레콤은 가상화를 4G/5G에 선도적으로 적용해 왔고, 이를 위해 OpenStack, Kubernetes와 같은 복잡한 가상화 관리 서비스를 효율적으로 관리하는 기술을 꾸준히 연구해 왔습니다. SK텔레콤은 Container 기술을 활용하여, 복잡한 소프트웨어의 라이프사이클 관리 및 다수의 모듈간 종속성 문제를 해결해왔습니다. 그리고, 이러한 노력에 대한 결과물은 여러 사람들이 널리 이롭게 사용하도록 오픈소스로 공개하고 있습니다.
@@ -27,8 +30,5 @@ TKS는 두 개의 상품으로 제공됩니다.
 - TKS Enterprise Solution : Enterprise 기업 고객을 위한 구축형 솔루션
 
 본 문서는 이 중에서 **TKS Cloud Service**에 대한 설명을 담고 있습니다.
-
-![promotion](../assets/images/tkscloud-catchphrase.png)
-
 
 !!! tip "TKS에 대한 추가 정보는 <a href="https://www.sktenterprise.com/product/detail/236" target="_blank">SKT Enterprise 홈페이지</a>에서 확인 가능합니다."
