@@ -1,7 +1,7 @@
 # TKS 퀵스타트 (로그인과 초기설정)
 ## **로그인**
 
-TKS Console ([https://tks-console.sktelecom.com](https://tks-console.sktelecom.com))에 접근하시면, 아래와 같은 로그인창이 나옵니다.
+TKS Console ([https://tks-console.sktenterprise.com](https://tks-console.sktenterprise.com))에 접근하시면, 아래와 같은 로그인창이 나옵니다.
 
 TKS 서비스 신청 완료시 조직 생성 안내 이메일이 발송됩니다. 이메일에 표시된 **조직코드**, **아이디**, **임시비밀번호**을 사용하여 로그인 해주세요.
 

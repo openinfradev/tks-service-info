@@ -80,7 +80,7 @@ AWS 클라우드 서비스를 선택하고 앞서 만든 클라우드 계정을 
 
     !!! info "CLI 접근을 Host PC에 필요한 Tool은 아래와 같습니다."
         - AWS IAM Authenticator (**0.5.9 version 이상**)   
-            <a href="https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/install-aws-iam-authenticator.html" target="_blank"> https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/install-aws-iam-authenticator.html</a>
+            <a href="https://weaveworks-gitops.awsworkshop.io/60_workshop_6_ml/00_prerequisites.md/50_install_aws_iam_auth.html" target="_blank"> https://weaveworks-gitops.awsworkshop.io/60_workshop_6_ml/00_prerequisites.md/50_install_aws_iam_auth.html</a>
         - kubectl: 
             <a href="https://kubernetes.io/docs/tasks/tools/" target="_blank">https://kubernetes.io/docs/tasks/tools/</a>
         - (option) AWS CLI : 설정이 잘 되었는지 확인 시 필요합니다.   
